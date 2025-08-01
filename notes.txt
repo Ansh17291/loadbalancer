@@ -1,0 +1,19 @@
+to run the servers , use the following commands . 
+
+for i in range(1,5):
+    npm run start:s{i}
+
+
+for load balancer use : npm run start:lb
+
+to run the test files use : npx ts-node test-ddos.ts
+
+
+
+NOTES :
+
+1. We are using Round-robin system, we can change if we get a new algo or a better algo to work on , but that's not out main objective for now as we need to implement the servers to safe attacks and not find an effecient algo for load balancer , i mean we can do that but if time permits.
+
+2. Rate Limiter .. we use to configure the rate's or amount of requests an ip can send.
+
+3. 

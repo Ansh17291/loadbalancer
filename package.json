@@ -1,0 +1,30 @@
+{
+  "name": "load-balancer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:lb": "nodemon --watch . --exec ts-node load-balancer.ts",
+    "start:s1": "nodemon --exec ts-node server1.ts",
+    "start:s2": "nodemon --exec ts-node server2.ts",
+    "start:s3": "nodemon --exec ts-node server3.ts",
+    "start:s4": "nodemon --exec ts-node server4.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/node": "^24.0.15",
+    "axios": "^1.10.0",
+    "http": "^0.0.1-security",
+    "http-proxy": "^1.18.1",
+    "rate-limiter-flexible": "^7.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/http-proxy": "^1.17.16",
+    "nodemon": "^3.1.10"
+  }
+}
