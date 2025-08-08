@@ -1,0 +1,20 @@
+to see in redis
+
+1. run redis - redis-server
+2. redis-cli
+
+-- custom dictionary
+3. GET ddos-log:::1
+"{\"ip\":\"::1\",\"timestamp\":\"2025-08-07T02:40:47.638Z\"}"
+
+-- redlimiter dictionary
+4. GET ddos:::1
+"30" 
+
+how it works:
+
+Connects to Redis and sets up a rate limiter to allow limited requests per IP.
+Creates multiple worker processes based on CPU cores (using clustering).
+Each worker listens for incoming requests.
+Checks if the IP has exceeded its request limit using Redis.
+If allowed, forwards the request to one of the backend servers using round-robin.
