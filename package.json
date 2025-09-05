@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:lb": "nodemon --watch . --exec ts-node load-balancer.ts",
+    "start:lb": "nodemon --watch . --exec ts-node load-balancer-features.ts",
     "start:s1": "nodemon --exec ts-node server1.ts",
     "start:s2": "nodemon --exec ts-node server2.ts",
     "start:s3": "nodemon --exec ts-node server3.ts",
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@types/http-proxy": "^1.17.16",
+    "@types/ua-parser-js": "^0.7.39",
     "nodemon": "^3.1.10"
   }
 }
