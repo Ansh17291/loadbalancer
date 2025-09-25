@@ -1,0 +1,101 @@
+# 🛡️ LoadBalancer Pro - Production Ready Load Balancer with DDoS Protection
+
+A high-performance, production-ready load balancer with advanced DDoS mitigation, real-time monitoring, and comprehensive analytics dashboard.
+
+## ✨ Features
+
+### 🔥 Core Features
+- **High-Performance Load Balancing** - Round-robin with health checks
+- **Advanced DDoS Protection** - Multi-layer security with real-time blocking
+- **Real-time Analytics** - Live traffic monitoring and attack visualization
+- **WebSocket Support** - Real-time dashboard updates
+- **Health Monitoring** - Automated server health checks with failover
+- **Geographic Filtering** - Block traffic from suspicious regions
+- **Bot Detection** - Advanced user-agent and pattern analysis
+- **Rate Limiting** - Configurable request limits per IP
+- **SSL Termination** - Built-in HTTPS support
+
+### 📊 Dashboard Features
+- Dark, modern UI with real-time updates
+- Traffic analytics with attack mitigation charts
+- Server load distribution monitoring
+- DDoS protection rule management
+- Configuration upload interface
+- Pricing and subscription management
+- WebSocket-powered live updates
+
+### 🛡️ Security Features
+- IP-based rate limiting
+- GeoIP filtering and blocking
+- Bot detection and challenge-response
+- Pattern analysis for attack detection
+- Automatic IP blocking for suspicious behavior
+- Request logging and forensics
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 16+ 
+- Redis (for session management)
+- Docker & Docker Compose (optional)
+
+### 1. Clone and Install
+```bash
+git clone https://github.com/yourusername/loadbalancer-pro
+cd loadbalancer-pro
+npm install
+```
+
+### 2. Environment Setup
+```bash
+cp .env.example .env
+# Edit .env with your configuration
+```
+
+### 3. Start Services
+
+#### Option A: Docker Compose (Recommended)
+```bash
+# Start all services including Redis, Grafana, Prometheus
+docker-compose up -d
+
+# View logs
+docker-compose logs -f loadbalancer
+```
+
+#### Option B: Manual Setup
+```bash
+# Start Redis
+redis-server
+
+# Start backend servers
+npm run start:s1 &
+npm run start:s2 &
+npm run start:s3 &
+npm run start:s4 &
+
+# Start load balancer
+npm start
+```
+
+#### Option C: PM2 Cluster Mode
+```bash
+# Install PM2 globally
+npm install -g pm2
+
+# Start cluster
+npm run cluster
+
+# View status
+pm2 status
+
+# View logs
+pm2 logs
+```
+
+### 4. Access Dashboard
+- **LoadBalancer Dashboard**: http://localhost:3000
+- **Grafana Monitoring**: http://localhost:3001 (admin/admin)
+- **Prometheus Metrics**: http://localhost:9090
+
+## 📁 Project Structure
