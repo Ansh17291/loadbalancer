@@ -1,10 +1,12 @@
-import http from 'http';
+import axios from 'axios';
 
-const PORT = 3002;
-
-http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end(`Handled by server on port ${PORT}`);
-}).listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+(async () => {
+  for (let i = 0; i < 1; i++) {
+    try {
+      const res = await axios.get('http://localhost:8080');
+      console.log(`[${i}] -> Correct`, res.data);
+    } catch (err: any) {
+      console.error(`[${i}] -> Err`, err.response?.status, err.response?.data);
+    }
+  }
+})();

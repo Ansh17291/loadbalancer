@@ -6,7 +6,17 @@ import axios from 'axios';
       const res = await axios.get('http://localhost:8080');
       console.log(`[${i}] -> Correct`, res.data);
     } catch (err: any) {
-      console.error(`[${i}] -> Err`, err.response?.status, err.response?.data);
+      // Log detailed error information (covers network errors and HTTP errors)
+      const status = err.response?.status;
+      const statusText = err.response?.statusText;
+      const data = err.response?.data;
+      console.error(`[${i}] -> Err`, {
+        status: status ?? 'NO_RESPONSE',
+        statusText: statusText ?? null,
+        data: data ?? null,
+        message: err.message,
+        code: err.code ?? null,
+      });
     }
   }
 })();
